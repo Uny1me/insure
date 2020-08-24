@@ -1,0 +1,458 @@
+
+
+
+
+        /*
+
+        --- 50Strokesofkim -- 
+
+
+        Full Documentation and Code Guide
+
+        Mobile First Design
+
+        1. Navbar Style - Line 32
+        2. Intro Section -Line 76
+        3. View Section - "" 107
+        4. Work Section - "" 160
+        5. Footer Section - "" Line 173
+
+        6. Media Query Semi Desktop(Tablet Mode Style)
+        6.1 - Line 222 (Where number corresponds with 1-5 above)
+        6.2 - "" 243
+        6.3 - "" 254
+        6.4 - "" 261
+        6.5 - "" 270
+        
+        Last two media Queries are for navbar abd Choosing image
+        
+        */
+
+
+:root {
+    --dark-violet: hsl(256, 26%, 20%);
+    --vdark-violet: hsl(270, 9%, 17%);
+    --lgrey-violet: hsl(0, 0%, 98%);
+    --grey-violet: hsl(216, 30%, 68%);
+    --dgrey-violet: hsl(273, 4%, 51%);
+}
+    *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;   
+    } 
+
+    body, h6 {
+    text-align: center;
+    font-family: 'Karla', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5 {
+        font-family: 'DM Serif Display', serif;
+    }
+    // Mobile First Approach , This selects mobile-image
+    .mobile {
+        display: block;
+        max-width: 100%;
+    }
+    .desktop {
+        display: none;
+        
+    }
+    // 1.
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: fixed;
+        background-color: var(--lgrey-violet);
+        z-index: 99;
+        // The z-index gives the navbar preeminence over the absolute desktop image, see line   
+        
+    li {
+        list-style-type: none;
+        font-size: .8rem;
+        padding: 1rem 0;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+    a {
+            text-decoration: none;
+            color: var(--lgrey-violet);
+        }
+    }
+    .btn {
+        border: 2px solid var(--lgrey-violet);
+        width: 80%;
+        margin: 0 auto;
+        
+    }
+        nav {
+            display: flex;
+            width: 100%;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem .7rem;
+        }
+        #close {
+            display: none;
+        }
+        
+    }
+     
+   
+    .container {
+
+        // 2. 
+
+        .row {
+            background: var(--dark-violet);
+            background-image: url(../images/bg-pattern-intro-left-mobile.svg);
+            background-repeat: no-repeat;
+            color: var(--lgrey-violet);
+            padding: 2.4rem 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            .header {
+                width: 80%;
+                margin: 0 auto;
+
+                h1 {
+                    padding-bottom: 2rem;
+                    line-height: 2.3rem;
+                    font-size: 2rem;
+                }
+
+                p {
+                    line-height: 1.3rem;
+                    font-size: .8rem;
+                    padding-bottom: 2rem;
+                }
+           }
+        }
+        
+
+        // 3.
+  
+        h1 {
+            margin-top: .6rem;
+            padding: 1rem 0;
+            line-height: 2.3rem;
+            font-size: 2rem;
+        }
+        hr {
+            height: .1px;
+            width: 30%;
+            margin: 0 auto;
+            margin-top: 2rem;
+            background: var(--dgrey-violet);
+        }
+
+        .col {
+            width: 80%;
+            margin: 0 auto;
+            color: var(--vdark-violet);
+            line-height: 1.3rem;
+
+            h3 {
+                padding: 1rem 0;
+                
+            }
+            p {
+                color: var(--dgrey-violet);
+                font-size: .8rem;
+              
+            }
+        }
+        .col + .col {
+            padding: 1.4rem 0 ;
+        }
+           
+        
+        button {
+            border: 2px solid var(--lgrey-violet);
+            padding: .7rem 2rem;
+            color:var(--lgrey-violet);
+            font-family: inherit;
+            text-transform: uppercase;
+            font-weight: 700;
+            background: transparent;
+            font-size: .7rem;
+           
+        }
+    }
+    .contain {
+        padding: 2.5rem 0;
+    }
+
+    // 4.
+
+    .work {
+        width: 90%;
+        margin: 0 auto;
+        padding: 2rem 1rem;
+        color: var(--lgrey-violet);
+        background: url(../images/bg-pattern-how-we-work-mobile.svg);
+        background-repeat: no-repeat;
+        background-position-x: right;
+        background-color: var(--dark-violet);
+    }
+
+    // 5.
+
+    .footer {
+        padding: 4rem 0 0 0;
+        margin-top: 0rem;
+        
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 0 0 0;
+            background: url(../images/bg-pattern-footer-mobile.svg);
+            background-repeat: no-repeat;
+            .logos {
+                padding: 1.4rem 0;
+                display: flex;
+                justify-content: space-between;
+                width: 40%;
+            }
+            }
+            .card  {
+                display: flex;
+                flex-direction: column;
+                padding: 1rem 0;
+
+                h6 {
+                    color: var(--dgrey-violet) !important;
+                    padding: 1.2rem 0 !important;
+                    
+                }
+
+                h6, p {                    
+                    color: var(--dark-violet);
+                    text-transform: uppercase;
+                    padding: .3rem 0;
+                    font-size: .8rem;
+                    font-weight: 900 !important;
+                }
+        }
+    }
+
+    // 6.
+@media (min-width: 540px) {
+    .desktop {
+        position: absolute;
+        right: 1.5rem;
+        width: 40%;
+        top: 8rem;
+    }
+    // 1.
+    .header {
+        text-align: left;
+        width: 55% !important;
+        margin-left: 1.5rem !important;
+        align-self: flex-start;   
+
+        h1 {
+            padding-bottom: 2rem;
+            line-height: 2rem;
+            font-size: 1.7rem !important;
+        }
+
+        p {
+            line-height: 1rem;
+            width: 80%;
+            font-size: .7rem !important;
+            padding-bottom: 2rem;
+        }
+    }
+
+    // 2.
+    .row {
+        align-items: flex-start;
+        padding: 3rem 0 !important;
+        margin: 0;
+    }
+    .intro {
+        background-image: url(../images/bg-pattern-intro-right-desktop.svg) !important;
+        background-repeat: no-repeat;
+        }
+
+        // 3.
+    .contain {
+                background-image: url(../images/bg-pattern-intro-left-desktop.svg) !important;
+                background-size: contain;
+                background-repeat: no-repeat;    
+        }
+    
+        // 4.
+    .work {
+        margin: 0 auto;
+        background: var(--dark-violet);
+        background-image: url(../images/bg-pattern-how-we-work-desktop.svg) !important;
+        background-size: contain;
+        background-position: right top;
+        background-repeat: no-repeat;
+    }
+    // 5.
+    .footer {
+        background-color: var(--lgrey-violet) !important;
+        margin-top: 2rem;
+        background-image: url(../images/bg-pattern-footer-desktop.svg) !important;
+        background-repeat: no-repeat;
+    
+    .logo {
+        background: none;
+    }
+    }
+}
+
+@media (min-width: 760px) {
+    body {
+        text-align: left;
+    }
+    .desktop {
+        position: absolute;
+        right: 1.5rem;
+        width: 40%;
+        top: 4rem;
+    }
+    .ham, #close {
+        display: none;
+    }
+    button:hover {
+        cursor: pointer;
+        background: var(--lgrey-violet);
+        color: var(--dark-violet);
+       
+    }
+    // 1.
+    header {
+        flex-direction: row;
+
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 1rem;
+            text-align: center;
+        
+    li {
+        list-style-type: none;
+        font-size: 10px !important;
+        padding: .6rem .6rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+
+    a {
+            text-decoration: none;
+            color: var(--dark-violet);
+        }
+    }
+    .btn {
+        border: 2px solid var(--dark-violet);
+        padding: .5rem .6rem;
+        margin: 0;
+        text-align: center;
+        width: 33%;
+    }
+    .btn:hover {
+        background: var(--dark-violet);
+    }
+    .btn:hover > a {
+        color: var(--lgrey-violet);
+    }
+  }
+
+}
+
+ hr {
+    display: block  !important;
+        width: 20% !important;
+        margin: 0 !important;
+        margin-top: 1.6rem !important;
+}
+// 3.
+ .contain {
+    padding: 4rem 2rem;
+
+    h1 {
+        padding: 2rem 0;
+    }
+ }
+
+//  2 and 5
+ .items {
+     display: flex;
+     justify-content: space-between;
+     
+     h3 {
+        font-size: .9rem !important;
+     }
+     p {
+         font-size: .7rem !important;
+     }
+
+     .col + .col {
+        padding: 0 1.5rem ;
+    }
+ }
+//  4.
+ .work {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem !important;
+    color: var(--lgrey-violet);
+}
+// 5.
+.footer {
+    padding: 2rem 3rem;
+    .logo {
+        
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+
+        .logos {
+            width: 25%;
+        }
+    }
+}
+
+}
+
+
+@media (max-width: 760px) {
+    ul {
+        display: none;
+        margin: 0 auto;
+        height: 85vh;
+        width: 100%;
+        padding: .5rem 0;
+        text-align: center;
+        list-style-type: none;
+        background-color: var(--vdark-violet);
+        background-image: url(../images/bg-pattern-mobile-nav.svg) !important;
+        background-position-y: bottom;
+        background-position-x: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+
+}
+@media (min-width: 375px) {
+    .mobile {
+        display: none;
+    }
+    .desktop {
+        display: block;
+        max-width: 100%;
+    }
+}
