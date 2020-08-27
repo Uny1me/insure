@@ -243,7 +243,7 @@
     }
 
     // 6.
-@media (min-width: 540px) {
+@media only screen and (min-width: 540px) {
     .desktop {
         position: absolute;
         right: 1.5rem;
@@ -311,7 +311,7 @@
     }
 }
 
-@media (min-width: 760px) {
+@media only screen and (min-width: 760px) {
     body {
         text-align: left;
     }
@@ -428,7 +428,7 @@
 }
 
 
-@media (max-width: 760px) {
+@media only screen and (max-width: 760px) {
     ul {
         display: none;
         margin: 0 auto;
